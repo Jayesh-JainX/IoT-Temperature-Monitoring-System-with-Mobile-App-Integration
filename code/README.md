@@ -1,6 +1,6 @@
 # Arduino Code Setup 💻
 
-This guide provides step-by-step instructions for setting up and uploading the Arduino code for the ESP8266 Water Level Depth Detection System, including integration with the Blynk app for Wi-Fi control.
+This guide provides step-by-step instructions for setting up and uploading the Arduino code for the ESP8266 Temperature Monitoring System, including integration with the Blynk app for Wi-Fi control.
 
 ## Step 1: Install Arduino Software
 
@@ -42,9 +42,9 @@ This guide provides step-by-step instructions for setting up and uploading the A
 
 ## Step 5: Open and Upload Code
 
-1. Open the Arduino code file (`Water_Level_Depth_Detection.ino`) in the Arduino IDE.
+1. Open the Arduino code file (`Temperature_Monitoring_System.ino`) in the Arduino IDE.
 
-2. Configure the code to include the Blynk library, Wi-Fi credentials, and settings for the water level depth detection sensor.
+2. Configure the code to include the Blynk library, Wi-Fi credentials, and settings for the LM34 temperature sensor.
 
 3. Verify and compile the code by clicking the checkmark icon (Verify) in the upper left corner of the Arduino IDE.
 
@@ -62,7 +62,7 @@ This guide provides step-by-step instructions for setting up and uploading the A
 
 4. Generate an authentication token and note it down.
 
-5. Add widgets to the project dashboard to control the LEDs and monitor connectivity.
+5. Add widgets to the project dashboard to display temperature readings and monitor connectivity.
 
 ## Step 7: Run the Project
 
@@ -70,7 +70,7 @@ This guide provides step-by-step instructions for setting up and uploading the A
 
 2. Open the Blynk app on your mobile device and navigate to the project dashboard.
 
-3. Use the widgets to control the LEDs and monitor connectivity.
+3. Use the widgets to display temperature readings and monitor connectivity.
 
 4. Test different scenarios and functionalities to ensure proper operation.
 
@@ -82,7 +82,7 @@ This guide provides step-by-step instructions for setting up and uploading the A
 
 3. Configure the project settings and choose the appropriate connection type (Wi-Fi).
 
-4. Add widgets to the project dashboard to control the LEDs and monitor connectivity.
+4. Add widgets to the project dashboard to display temperature readings and monitor connectivity.
 
 ## Screenshots 📸
 
