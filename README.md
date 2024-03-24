@@ -1,6 +1,6 @@
-# IoT Water Tank Monitoring System with Mobile App Integration 💧📱
+# IoT Temperature Monitoring System with Mobile App Integration 🌡️📱
 
-This project demonstrates interfacing water level sensors with an ESP8266 (D1 R1) and controlling LEDs through Wi-Fi using the Blynk app. The LEDs indicate the water level, and the project includes integration with a water level depth detection sensor for precise readings.
+This project demonstrates interfacing temperature sensors with an ESP8266 (D1 R1) and displaying temperature data through Wi-Fi using the Blynk app. The project includes integration with an LM34 temperature sensor for accurate temperature readings.
 
 <br>
 
@@ -30,10 +30,10 @@ This project demonstrates interfacing water level sensors with an ESP8266 (D1 R1
 
 - D2, D3, D6, D10: Pins connected to LEDs.
 - D1: Pin used to indicate connectivity.
-- A0: Analog pin connected to the water level depth detection sensor.
+- A0: Analog pin connected to the LM34 temperature sensor.
 - GND: Ground connection.
 - ESP8266: Wemos ESP8266 Wi-Fi Board (D1 R1)
-- Sensor: Water Level Depth Detection Sensor
+- Sensor: LM34 Temperature Sensor
 
 ## Setup Steps 🛠️
 
@@ -45,8 +45,7 @@ Connect the components as follows:
 
 - Connect LEDs (3.3V Red, Green, Blue, Yellow LEDs) to pins D2, D3, D6, and D10 on the ESP8266 board.
 - Connect pin D1 to indicate network and cloud connectivity.
-- Connect the negative (shorter) lead of each LED to the ground (GND) on the breadboard to complete the circuit.
-- Connect the water level depth detection sensor to pin A0, GND, and 3.3V on the ESP8266 board.
+- Connect the LM34 temperature sensor to pin A0, GND, and 3.3V on the ESP8266 board.
 
 ### 2. Components Required 🧰
 
@@ -66,14 +65,15 @@ You will need the following components:
 - **LEDs**: For lighting effects.
   - **Specifications**:
     - Type: 3.3V LEDs (Red, Green, Blue, Yellow)
-- **Water Level Depth Detection Sensor**: For precise water level readings.
+- **LM34 Temperature Sensor**: For precise temperature readings.
   - **Specifications**:
-    - Operating Voltage: DC 3-5V
-    - Operating Current: < 20mA
-    - Sensor Type: Analog
-    - Detection Area: 40mm x 16mm
-    - Operating Temperature: 10°C-30°C
-    - Humidity: 10% - 90% non-condensing
+    - Calibrated Directly in Degrees Fahrenheit.
+    - Linear 10.0 mV/°F Scale Factor.
+    - 1.0°F Accuracy Assured (at 77°F)
+    - Rated for Full −50° to 300°F Range.
+    - Suitable for Remote Applications.
+    - Operates From 5 to 30 Volts.
+    - Less Than 90-µA Current Drain.
 - **Female, Male to Male Jumper Wires**: For connecting components.
 
 For detailed connections and pinouts, refer to the component directories in the `components` folder.
@@ -119,20 +119,21 @@ This directory contains information about the LEDs used in the project.
 
 For more details, refer to [LED Details](components/LED)
 
-### Water Level Depth Detection Sensor 🌊
+### LM34 Temperature Sensor 🌡️
 
-This directory contains information about the water level depth detection sensor used in the project.
+This directory contains information about the LM34 temperature sensor used in the project.
 
 #### Specifications
 
-- Operating Voltage: DC 3-5V
-- Operating Current: < 20mA
-- Sensor Type: Analog
-- Detection Area: 40mm x 16mm
-- Operating Temperature: 10°C-30°C
-- Humidity: 10% - 90% non-condensing
+- Calibrated Directly in Degrees Fahrenheit.
+- Linear 10.0 mV/°F Scale Factor.
+- 1.0°F Accuracy Assured (at 77°F)
+- Rated for Full −50° to 300°F Range.
+- Suitable for Remote Applications.
+- Operates From 5 to 30 Volts.
+- Less Than 90-µA Current Drain.
 
-For more details, refer to [Water Level Depth Detection Sensor Details](components/WATER_SENSOR)
+For more details, refer to [LM34 Temperature Sensor Details](components/LM34_TEMP_SENSOR)
 
 ### Female, Male to Male Jumper Wires 🚀
 
@@ -169,7 +170,7 @@ Blynk is a platform that allows you to build IoT applications easily. Follow the
 1. Go to the [Blynk website](https://blynk.io/) and sign up for an account.
 2. Once logged in, create a new project and select the ESP8266 board.
 3. Configure the project settings and choose the appropriate connection type (Wi-Fi).
-4. Add widgets to the project dashboard to control the LEDs and monitor connectivity.
+4. Add widgets to the project dashboard to display temperature readings and monitor connectivity.
 
 ## Variable Setup
 
@@ -178,31 +179,31 @@ Blynk is a platform that allows you to build IoT applications easily. Follow the
 
 ## Arduino Code Configuration
 
-1. Open the Arduino code file [`Water_Tank_Monitoring_System.ino`](code/Water_Tank_Monitoring_System/Water_Tank_Monitoring_System.ino) from this repository.
+1. Open the Arduino code file [`Temperature_Monitoring_System.ino`](code/Temperature_Monitoring_System/Temperature_Monitoring_System.ino) from this repository.
 2. Include the Blynk library and configure the Wi-Fi credentials.
 3. Initialize Blynk with your authentication token and connect to the Blynk server.
 4. Map the virtual pins to the corresponding LEDs and connectivity indicators.
-5. Implement functions to handle LED control, monitor connectivity status, and read data from the water level depth detection sensor.
+5. Implement functions to handle LED control, monitor connectivity status, and read data from the LM34 temperature sensor.
 
 ## Mobile App Configuration
 
 1. Download and install the Blynk app from the [App Store](https://apps.apple.com/us/app/blynk-control-arduino-raspberry/id808760481) or [Google Play](https://play.google.com/store/apps/details?id=cc.blynk).
 2. Log in to the Blynk app using your account credentials.
 3. Open the project created earlier in the web interface.
-4. Configure the app interface by adding buttons, sliders, or other widgets to control the LEDs and display water level readings.
-5. Create widgets to display the connectivity status of the ESP8266 and water level readings from the sensor.
+4. Configure the app interface by adding buttons, sliders, or other widgets to control the LEDs and display temperature readings.
+5. Create widgets to display the connectivity status of the ESP8266 and temperature readings from the LM34 sensor.
 
 ## Template Setup
 
 1. Create templates on the Blynk web interface for the project dashboard.
-2. Customize the templates with the desired layout and functionality, including widgets for controlling LEDs, displaying water level readings, and monitoring connectivity.
+2. Customize the templates with the desired layout and functionality, including widgets for controlling LEDs, displaying temperature readings, and monitoring connectivity.
 3. Save the templates and ensure they are synchronized with the mobile app.
 
 ## Running the Project
 
 1. Connect your ESP8266 board to power and ensure it is connected to the Wi-Fi network.
 2. Open the Blynk app on your mobile device and navigate to the project dashboard.
-3. Use the widgets to control the LEDs, monitor connectivity, and view water level readings.
+3. Use the widgets to control the LEDs, monitor connectivity, and view temperature readings.
 4. Test different scenarios and functionalities to ensure proper operation.
 
 ## Screenshots 📸
